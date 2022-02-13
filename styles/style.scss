@@ -1,0 +1,103 @@
+$backgroundColor: #313332;
+$textColor: white;
+$tabColor: RGBA(0, 0, 0, 0.6);
+$terminalBackground: RGBA(0, 0, 0, 0.4);
+$contentBackground: RGBA(0, 0, 0, 0.6);
+$inactiveTabColor: RGBA(0, 0, 0, 0.2);
+$tabRadius: 5px;
+$margin: 0 20px;
+$padding: 30px;
+$tabsPadding: 10px;
+$terminalRadius: 10px;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: $textColor;
+}
+
+.container {
+    background-color: $backgroundColor;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .terminal {
+        background-color: $terminalBackground;
+        border-radius: $terminalRadius;
+        width: 80vw;
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px;
+            padding: $tabsPadding;
+            padding-bottom: 0;
+
+            .tab {
+                cursor: pointer;
+                padding: 10px $padding;
+                border-top-left-radius: $tabRadius;
+                border-top-right-radius: $tabRadius;
+                transition-duration: 0.2s;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:not(.active) {
+                    background-color: $inactiveTabColor;
+                }
+            }
+
+            .active {
+                background-color: $tabColor;
+                font-size: 20px;
+            }
+        }
+
+        .content {
+            z-index: 999;
+            padding: $padding;
+            background-color: $contentBackground;
+            border-bottom-left-radius: $terminalRadius;
+            border-bottom-right-radius: $terminalRadius;
+
+            .line {
+                text-shadow: 0 0 10px $textColor, 0 0 20px $textColor;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .tabs {
+        flex-direction: column;
+        background-color: none !important;
+        padding: 10px !important;
+
+        .tab {
+            margin: 1px 0 !important;
+            border-radius: $tabRadius;
+
+            &:not(.active) {
+                margin-left: 10px !important;
+            }
+
+            &:first-child {
+                margin-top: 0 !important;
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}

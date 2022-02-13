@@ -1,0 +1,101 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+}
+
+.container {
+  background-color: #313332;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .terminal {
+  background-color: RGBA(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 80vw;
+}
+
+.container .terminal .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.container .terminal .tabs .tab {
+  cursor: pointer;
+  padding: 10px 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+
+.container .terminal .tabs .tab:first-child {
+  margin-left: 0;
+}
+
+.container .terminal .tabs .tab:not(.active) {
+  background-color: RGBA(0, 0, 0, 0.2);
+}
+
+.container .terminal .tabs .active {
+  background-color: RGBA(0, 0, 0, 0.6);
+  font-size: 20px;
+}
+
+.container .terminal .content {
+  z-index: 999;
+  padding: 30px;
+  background-color: RGBA(0, 0, 0, 0.6);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.container .terminal .content .line {
+  text-shadow: 0 0 10px white, 0 0 20px white;
+}
+
+@media screen and (max-width: 600px) {
+  .tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: none !important;
+    padding: 10px !important;
+  }
+  .tabs .tab {
+    margin: 1px 0 !important;
+    border-radius: 5px;
+  }
+  .tabs .tab:not(.active) {
+    margin-left: 10px !important;
+  }
+  .tabs .tab:first-child {
+    margin-top: 0 !important;
+  }
+  .tabs .tab:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */
